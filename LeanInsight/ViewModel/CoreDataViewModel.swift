@@ -159,6 +159,9 @@ class CoreDataViewModel {
                 allFats.append(Double(e.fatPercentage))
             }
             
+            //filter 0 value
+            allFats = allFats.filter{$0 != 0.0}
+            
             guard let max = allFats.max(), let min = allFats.min() else { return (0.0,0.0) }
             
             return (min:min, max:max)

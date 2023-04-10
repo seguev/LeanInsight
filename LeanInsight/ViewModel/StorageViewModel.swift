@@ -63,7 +63,7 @@ struct StorageViewModel {
         
         //for debugging
         var n = 0 //days
-        var m = -1 //weeks
+        var m = 0 //weeks
 //        print("Week \(weekOfYear+m)")
         if n + todayIndex > Day.allCases.count-1 {n-=7;m+=1}
         

@@ -23,20 +23,25 @@ struct GraphViewModel {
      chart setup
      */
     func chartSetup (_ view:UIView, chart:LineChartView) {
-        chart.rightAxis.enabled = false
-        chart.xAxis.labelPosition = .bottom
-        chart.leftAxis.labelPosition = .outsideChart
+        chart.rightAxis.enabled = true ;#warning("change")
+        chart.leftAxis.enabled = true ;#warning("change")
+        chart.leftAxis.labelPosition = .insideChart
+        chart.rightAxis.labelPosition = .insideChart
+        chart.leftAxis.labelTextColor = .black
+        chart.leftAxis.drawGridLinesEnabled = false
+        chart.rightAxis.drawGridLinesEnabled = false
+        
+//        chart.leftAxis.drawLabelsEnabled = false
+
+        chart.xAxis.enabled = false
+//        chart.xAxis.labelPosition = .bottom
         chart.doubleTapToZoomEnabled = false
         chart.pinchZoomEnabled = false
         chart.dragEnabled = true
-        chart.xAxis.labelFont = .systemFont(ofSize: 12)
+//        chart.xAxis.labelFont = .systemFont(ofSize: 12)
         chart.center = view.center
-        chart.leftAxis.enabled = false
-        chart.xAxis.enabled = false
         chart.leftAxis.axisLineColor = .black
         chart.rightAxis.axisLineColor = .black
-        chart.leftAxis.drawLabelsEnabled = false
-        chart.drawMarkers = false
         chart.drawGridBackgroundEnabled = false
         chart.scaleYEnabled = false
         chart.scaleXEnabled = false
@@ -46,16 +51,18 @@ struct GraphViewModel {
         chart.noDataText = "Not enough entries"
         chart.noDataFont = .systemFont(ofSize: 30)
 
-        //bmi & weight are shating left graph
-//        let minimumWeightOrBmi =
+
         
         //weight axis
         chart.leftAxis.axisMinimum = (CoreDataViewModel.shared.fetchMinAndMaxWeight() ?? (0.0,0.0)).min * 0.9
         chart.leftAxis.axisMaximum = (CoreDataViewModel.shared.fetchMinAndMaxWeight() ?? (0.0,0.0)).max
         
         //fat axis
-        chart.rightAxis.axisMinimum = CoreDataViewModel.shared.fetchMinAndMaxFat().min * 0.9
-        chart.rightAxis.axisMaximum = CoreDataViewModel.shared.fetchMinAndMaxFat().max * 1.1
+        #warning("fat entry == nil == 0.0 -> graph's minimum value == 0.0 -> higher fat line")
+
+        
+        chart.rightAxis.axisMinimum = CoreDataViewModel.shared.fetchMinAndMaxFat().min * 0.9 // * 0.9
+        chart.rightAxis.axisMaximum = CoreDataViewModel.shared.fetchMinAndMaxFat().max * 1.1  // * 1.1
 
         view.addSubview(chart)
         chart.translatesAutoresizingMaskIntoConstraints = false
@@ -145,7 +152,7 @@ struct GraphViewModel {
     private func handleSuddenFatEntries (_ fatEntriesArray: inout [ChartDataEntry], totalEntriesCount:Int) {
         
         //prevent one dot in the middle of the screen
-        guard fatEntriesArray.count > 2 else {
+        guard fatEntriesArray.count > 1 else {
             fatEntriesArray = []
             return
         }
@@ -159,6 +166,7 @@ struct GraphViewModel {
             }
             
         }
+        
     }
     
     private mutating func useDebugData (_ chart:LineChartView, isDebug : Bool = true, entriesNum:Int = 20) {
@@ -263,7 +271,7 @@ struct GraphViewModel {
         }
         */
         sets.forEach { uniSet in
-            uniSet.highlightColor = UIColor(named: "secondSetText")!
+            uniSet.highlightColor = textColor!
             uniSet.mode = .linear
             uniSet.circleRadius = 4
             uniSet.drawFilledEnabled = true
@@ -295,17 +303,7 @@ struct GraphViewModel {
         return entry
     }
     
-    /*
-    func handleOffScreen(_ view:UIView,_ popUP:UIView) {
-        
-        if popUP.frame.origin.x < 0 {
-            popUP.frame.origin.x = 5
-            
-        } else if popUP.frame.maxX > view.frame.width {
-            popUP.frame.origin.x = view.frame.width - popUP.frame.width - 5
-        }
-    }
-    */
+  
     
     /**
      Add shadow to popup
