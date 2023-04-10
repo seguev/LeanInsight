@@ -9,12 +9,12 @@ import Foundation
 
 struct CaliperCalcModel {
     
-    var age : Int?
+
     var genderUniqueFold : Int?
     var abdominalFold : Int?
     var thighFold : Int?
     var fatPercentage: Double?
-    var gender : Gender = .Male
+    
     
     
 }

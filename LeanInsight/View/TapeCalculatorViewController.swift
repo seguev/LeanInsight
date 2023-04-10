@@ -8,23 +8,24 @@
 import UIKit
 
 class TapeCalculatorViewController: UIViewController, UITextFieldDelegate {
-    @IBOutlet weak var ageLable: UILabel!
+    @IBOutlet weak var firstLabel: UILabel!
     @IBOutlet weak var secondLabel: UILabel!
     @IBOutlet weak var thirdLabel: UILabel!
     @IBOutlet weak var fourthLabel: UILabel!
-    @IBOutlet weak var fifthLabel: UILabel!
     
     @IBOutlet weak var firstTextField: UITextField!
     @IBOutlet weak var secondTextField: UITextField!
     @IBOutlet weak var thirdTextField: UITextField!
     @IBOutlet weak var fourthTextField: UITextField!
-    @IBOutlet weak var fifthTextField: UITextField!
     @IBOutlet weak var systemSegmentedControl: UISegmentedControl!
     @IBOutlet weak var genderSegmentedControl: UISegmentedControl!
     
     var model = TapeCalcModel()
     var infoLabel : UILabel?
+    
     var system : System = SettingsViewModel.shared.system
+    
+    var gender = SettingsViewModel.shared.gender
     
     let calc = CalculatorViewModel()
     
@@ -43,7 +44,7 @@ class TapeCalculatorViewController: UIViewController, UITextFieldDelegate {
         
         systemSegmentedControl.selectedSegmentIndex = system == .Metric ? 1 : 0
         
-        genderSegmentedControl.selectedSegmentIndex = SettingsViewModel.shared.gender == .Female ? 1 : 0
+        genderSegmentedControl.selectedSegmentIndex = gender == .Female ? 1 : 0
     }
     
     @objc private func screenPressed () {
@@ -56,8 +57,10 @@ class TapeCalculatorViewController: UIViewController, UITextFieldDelegate {
     @IBAction func genderChanged(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
             setMaleLabels()
+            gender = .Male
         } else if sender.selectedSegmentIndex == 1 {
             setFemaleLabels()
+            gender = .Female
         }
     }
     
@@ -74,27 +77,26 @@ class TapeCalculatorViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func updatePlaceHolders () {
-        firstTextField.placeholder = "Years"
+        firstTextField.placeholder = system == .Imperial ? "Inches" : "Centimeters"
         secondTextField.placeholder = system == .Imperial ? "Inches" : "Centimeters"
         thirdTextField.placeholder = system == .Imperial ? "Inches" : "Centimeters"
         fourthTextField.placeholder = system == .Imperial ? "Inches" : "Centimeters"
-        fifthTextField.placeholder = system == .Imperial ? "Inches" : "Centimeters"
     }
     
     
     func setMaleLabels () {
         print("male has been set")
-        secondLabel.text = "Hips"
-        thirdLabel.text = "Waist"
-        fourthLabel.text = "Forearm"
-        fifthLabel.text = "Wrist"
+        firstLabel.text = "Hips"
+        secondLabel.text = "Waist"
+        thirdLabel.text = "Forearm"
+        fourthLabel.text = "Wrist"
     }
     
     func setFemaleLabels () {
-        secondLabel.text = "Hips"
-        thirdLabel.text = "Thigh"
-        fourthLabel.text = "Calf"
-        fifthLabel.text = "Wrist"
+        firstLabel.text = "Hips"
+        secondLabel.text = "Thigh"
+        thirdLabel.text = "Calf"
+        fourthLabel.text = "Wrist"
     }
     
     // MARK: - textField delegate funcs
@@ -107,19 +109,18 @@ class TapeCalculatorViewController: UIViewController, UITextFieldDelegate {
         
         if let availableText = textField.text, availableText != ""{
             guard let tDouble = Double(availableText) else {fatalError("this is weird")}
-            switch textField.restorationIdentifier{
-            case "1":
-                model.age = Int(availableText)
-            case "2":
+            
+            switch textField.tag {
+            case 0:
                 model.hips = .init(value: tDouble, unit: unit)
-            case "3":
+            case 1:
                 model.waistAndThigh = .init(value: tDouble, unit: unit)
-            case "4":
+            case 2:
                 model.forarmAndCalf = .init(value: tDouble, unit: unit)
-            case "5":
+            case 3:
                 model.wrist = .init(value: tDouble, unit: unit)
             default:
-                print("da fuck did you just do")
+                print("switch statement missed a case")
             }
         }
         return true
@@ -137,17 +138,17 @@ class TapeCalculatorViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func calculatePressed(_ sender: UIButton) {
         view.endEditing(true)
-        if let safeAge = model.age,
+        if let safeAge = SettingsViewModel.shared.age,
            let safeHips = model.hips,
            let safeWaistOrThigh = model.waistAndThigh,
            let safeForearmOrCalf = model.forarmAndCalf,
            let safeWrist = model.wrist {
             
-            if model.gender == .Male {
+            if gender == .Male {
                 model.fatPercentage = calc.calculateBodyFatPercentageWithTape(gender: .Male, age: safeAge, hip: safeHips, waistOrThigh: safeWaistOrThigh, calfOrForearm: safeForearmOrCalf, wrist: safeWrist)
 
                 
-            } else if model.gender == .Female {
+            } else if gender == .Female {
                 model.fatPercentage = calc.calculateBodyFatPercentageWithTape(gender: .Female, age: safeAge, hip: safeHips, waistOrThigh: safeWaistOrThigh, calfOrForearm: safeForearmOrCalf, wrist: safeWrist)
                 
             }
@@ -160,7 +161,7 @@ class TapeCalculatorViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! ResultViewController
         destinationVC.result = model.fatPercentage
-        destinationVC.gender = model.gender
+        destinationVC.gender = gender
     }
     
     @IBAction func infoPressed(_ sender: UIBarButtonItem) {
@@ -178,8 +179,7 @@ extension TapeCalculatorViewController : MyToolBarDelegate {
         [firstTextField,
         secondTextField,
         thirdTextField,
-        fourthTextField,
-        fifthTextField]
+        fourthTextField]
     }
     
     

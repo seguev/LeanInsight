@@ -9,19 +9,20 @@ import UIKit
 
 class CaliperCalculatorViewController: UIViewController, UITextFieldDelegate, MyToolBarDelegate {
 
+    @IBOutlet weak var genderSegmentedControl: UISegmentedControl!
     
     @IBOutlet weak var firstLabel: UILabel!
     @IBOutlet weak var secondLabel: UILabel!
     @IBOutlet weak var thirdLabel: UILabel!
-    @IBOutlet weak var fourthLabel: UILabel!
     @IBOutlet weak var firstTextField: UITextField!
     @IBOutlet weak var secondTextField: UITextField!
     @IBOutlet weak var thirdTextField: UITextField!
-    @IBOutlet weak var fourthTextField: UITextField!
     
     var model = CaliperCalcModel()
     var infoLabel : UILabel?
     let calc = CalculatorViewModel()
+    
+    var gender = SettingsViewModel.shared.gender
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,111 +34,27 @@ class CaliperCalculatorViewController: UIViewController, UITextFieldDelegate, My
         addGradient(view: view)
         
         closeTextFieldsWhenTappedAround()
+        
+        setSegmentedControlInitialValue()
+        
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideLabel)))
     }
     
-    func allOfMyTextFields() -> [UITextField] {
-        [firstTextField,
-         secondTextField,
-         thirdTextField,
-         fourthTextField]
+    private func setSegmentedControlInitialValue () {
+                
+        genderSegmentedControl.selectedSegmentIndex = gender == .Female ? 1 : 0
     }
-    
-    /* replaces with protocol
-    private func toolBalSetup (textFields : [UITextField]) {
-        
-        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 40))
-        //items
-        let first = UIBarButtonItem(image: UIImage(systemName: "chevron.up"), style: .plain, target: self, action: #selector(goToPreviousTextField(_:)))
-        let second = UIBarButtonItem(image: UIImage(systemName: "chevron.down"), style: .plain, target: self, action: #selector(goToNextTextField(_:)))
-        let third = UIBarButtonItem(systemItem: .flexibleSpace)
-        let fourth = UIBarButtonItem(systemItem: .done, primaryAction: UIAction(handler: {_ in self.view.endEditing(true)}))
-        toolbar.items = [first,second,third,fourth]
-        
-        
-        for textField in textFields {
-            textField.inputAccessoryView = toolbar
-        }
-    }
-    @objc private func goToNextTextField (_ sender:UIBarButtonItem) {
-        
-        if firstTextField.isFirstResponder {
-            secondTextField.becomeFirstResponder()
-            secondTextField.text = ""
-        } else if secondTextField.isFirstResponder {
-            thirdTextField.becomeFirstResponder()
-            thirdTextField.text = ""
-        } else if thirdTextField.isFirstResponder {
-            fourthTextField.becomeFirstResponder()
-            fourthTextField.text = ""
-        } else if fourthTextField.isFirstResponder {
-            firstTextField.becomeFirstResponder()
-            firstTextField.text = ""
-        }
-    }
-    @objc private func goToPreviousTextField (_ sender:UIBarButtonItem) {
-        if firstTextField.isFirstResponder {
-            fourthTextField.becomeFirstResponder()
-            fourthTextField.text = ""
-        } else if secondTextField.isFirstResponder {
-            firstTextField.becomeFirstResponder()
-            firstTextField.text = ""
-        } else if thirdTextField.isFirstResponder {
-            secondTextField.becomeFirstResponder()
-            secondTextField.text = ""
-        } else if fourthTextField.isFirstResponder {
-            thirdTextField.becomeFirstResponder()
-            thirdTextField.text = ""
-        }
-    }
-    */
-    
-    @objc func hideLabel () {
-        view.endEditing(true)
-        if let infoLabel {
-            infoLabel.removeFromSuperview()
-        }
-    }
-    func changeLabelsToMale () {
-        firstLabel.text = "Age"
-        secondLabel.text = "Chest"
-        thirdLabel.text = "Abdominal"
-        fourthLabel.text = "Mid thigh"
-        
-    }
-    
-    func changeLabelsToFemale () {
-        firstLabel.text = "Age"
-        secondLabel.text = "Triceps"
-        thirdLabel.text = "Suprailiac"
-        fourthLabel.text = "Mid thigh"
-        
-    }
-    
-    
-    /**
-     toggle male and female
-     - male index is 0
-     - female index is 1
-     */
-    @IBAction func segmentChanged(_ sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex == 0 {
-            changeLabelsToMale()
-            model.gender = .Male
-        } else if sender.selectedSegmentIndex == 1 {
-            changeLabelsToFemale()
-            model.gender = .Female
-        }
-    }
-    
-    
-    
     
     private func closeTextFieldsWhenTappedAround () {
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tapGesture)
     }
-    
+    // MARK: - textField funcs
+    func allOfMyTextFields() -> [UITextField] {
+        [firstTextField,
+         secondTextField,
+         thirdTextField]
+    }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if string == "." && textField.text!.contains(".") {
@@ -156,39 +73,79 @@ class CaliperCalculatorViewController: UIViewController, UITextFieldDelegate, My
         
         if let availableText = textField.text, availableText != "" {
             guard let tInt = Int(availableText) else {fatalError("this is weird")}
-            switch textField.restorationIdentifier{
-            case "1":
-                model.age = tInt
-            case "2":
+            
+            switch textField.tag {
+
+            case 0:
                 model.genderUniqueFold = tInt
-            case "3":
+            case 1:
                 model.abdominalFold = tInt
-            case "4":
+            case 2:
                 model.thighFold = tInt
                 
             default:
-                print("da fuck did you just do")
+                print("switch statement missed a case")
             }
         }
         return true
     }
+
     
+    @objc func hideLabel () {
+        view.endEditing(true)
+        if let infoLabel {
+            infoLabel.removeFromSuperview()
+        }
+    }
+    
+    func changeLabelsToMale () {
+        firstLabel.text = "Chest"
+        secondLabel.text = "Abdominal"
+        thirdLabel.text = "Mid thigh"
+        
+    }
+    
+    func changeLabelsToFemale () {
+        firstLabel.text = "Triceps"
+        secondLabel.text = "Suprailiac"
+        thirdLabel.text = "Mid thigh"
+        
+    }
+    
+    
+    /**
+     toggle male and female
+     - male index is 0
+     - female index is 1
+     */
+    @IBAction func segmentChanged(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            changeLabelsToMale()
+            gender = .Male
+        } else if sender.selectedSegmentIndex == 1 {
+            changeLabelsToFemale()
+            gender = .Female
+        }
+    }
+    
+
+
     
     @IBAction func calculatePressed(_ sender: UIButton) {
         view.endEditing(true) //end editing for all textfields and save values
         
-        if let safeAge = model.age,
+        if let safeAge = SettingsViewModel.shared.age,
            let safeGenderUniqueFold = model.genderUniqueFold,
            let safeAbdominalFold = model.abdominalFold,
            let safeThighFold = model.thighFold {
             
-            if model.gender == .Male {
+            if gender == .Male {
                 model.fatPercentage = calc.calcMenBodyFat(age: safeAge,
                                                           chest: safeGenderUniqueFold,
                                                           abdominal: safeAbdominalFold,
                                                           thigh: safeThighFold
                 )
-            } else if model.gender == .Female {
+            } else if gender == .Female {
                 model.fatPercentage = calc.calcWomenBodyFat(age: safeAge,
                                                             triceps: safeGenderUniqueFold,
                                                             suprailiac: safeAbdominalFold,
@@ -208,7 +165,7 @@ class CaliperCalculatorViewController: UIViewController, UITextFieldDelegate, My
         
         let destinationVC = segue.destination as! ResultViewController
         destinationVC.result = model.fatPercentage
-        destinationVC.gender = model.gender
+        destinationVC.gender = gender
     }
     
     
@@ -218,21 +175,21 @@ class CaliperCalculatorViewController: UIViewController, UITextFieldDelegate, My
         
         switch sender.tag {
         case 0:
-            if model.gender == .Male {
+            if gender == .Male {
                 infoLabel = info.showInfoLabel(view, text: info.caliperMaleInfo.Chest,top: true)
-            } else if model.gender == .Female {
+            } else if gender == .Female {
                 infoLabel = info.showInfoLabel(view, text: info.caliperFemaleInfo.Tricep,top: true)
             }
         case 1:
-            if model.gender == .Male {
+            if gender == .Male {
                 infoLabel = info.showInfoLabel(view, text: info.caliperMaleInfo.Abdominal,top: true)
-            } else if model.gender == .Female {
+            } else if gender == .Female {
                 infoLabel = info.showInfoLabel(view, text: info.caliperFemaleInfo.Suprailiac,top: true)
             }
         case 2:
-            if model.gender == .Male {
+            if gender == .Male {
                 infoLabel = info.showInfoLabel(view, text: info.caliperMaleInfo.Thigh,top: true)
-            } else if model.gender == .Female {
+            } else if gender == .Female {
                 infoLabel = info.showInfoLabel(view, text: info.caliperFemaleInfo.Thigh,top: true)
             }
         default:

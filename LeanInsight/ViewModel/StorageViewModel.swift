@@ -62,8 +62,8 @@ struct StorageViewModel {
         let weekOfYear = DateFormatter().calendar.component(.weekOfYear, from: Date())
         
         //for debugging
-        var n = 4 //days
-        var m = 0 //weeks
+        var n = 0 //days
+        var m = -1 //weeks
 //        print("Week \(weekOfYear+m)")
         if n + todayIndex > Day.allCases.count-1 {n-=7;m+=1}
         
