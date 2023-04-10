@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		60FBA50729E3E5920089B4E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBA50629E3E5920089B4E0 /* AppDelegate.swift */; };
 		60FBA50929E3E5920089B4E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBA50829E3E5920089B4E0 /* SceneDelegate.swift */; };
-		60FBA50B29E3E5920089B4E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBA50A29E3E5920089B4E0 /* ViewController.swift */; };
 		60FBA50E29E3E5920089B4E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60FBA50C29E3E5920089B4E0 /* Main.storyboard */; };
 		60FBA51129E3E5920089B4E0 /* LeanInsight.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 60FBA50F29E3E5920089B4E0 /* LeanInsight.xcdatamodeld */; };
 		60FBA51329E3E5920089B4E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60FBA51229E3E5920089B4E0 /* Assets.xcassets */; };
@@ -18,6 +17,27 @@
 		60FBA52B29E3E5920089B4E0 /* LeanInsightUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBA52A29E3E5920089B4E0 /* LeanInsightUITests.swift */; };
 		60FBA52D29E3E5920089B4E0 /* LeanInsightUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBA52C29E3E5920089B4E0 /* LeanInsightUITestsLaunchTests.swift */; };
 		60FBA54329E3E7730089B4E0 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 60FBA54229E3E7730089B4E0 /* Charts */; };
+		60FBA54829E3E9E40089B4E0 /* WeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBA54729E3E9E40089B4E0 /* WeekViewController.swift */; };
+		60FBA54A29E3EA250089B4E0 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBA54929E3EA250089B4E0 /* QuizViewController.swift */; };
+		60FBA54C29E3EB650089B4E0 /* SettingPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBA54B29E3EB650089B4E0 /* SettingPopupViewController.swift */; };
+		60FBA54E29E3EB8F0089B4E0 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBA54D29E3EB8F0089B4E0 /* SettingsTableViewController.swift */; };
+		60FBA55029E3EBBB0089B4E0 /* WeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBA54F29E3EBBB0089B4E0 /* WeightViewController.swift */; };
+		60FBA55229E3EBDA0089B4E0 /* CaliperCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBA55129E3EBDA0089B4E0 /* CaliperCalculatorViewController.swift */; };
+		60FBA55429E3EBFF0089B4E0 /* TapeCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBA55329E3EBFF0089B4E0 /* TapeCalculatorViewController.swift */; };
+		60FBA55629E3EC340089B4E0 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBA55529E3EC340089B4E0 /* ResultViewController.swift */; };
+		60FBA55829E3EC570089B4E0 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBA55729E3EC570089B4E0 /* GraphViewController.swift */; };
+		60FBA55A29E3EC7B0089B4E0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBA55929E3EC7B0089B4E0 /* MainViewController.swift */; };
+		60FBA55C29E3ECA90089B4E0 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBA55B29E3ECA90089B4E0 /* Model.swift */; };
+		60FBA55E29E3ECBE0089B4E0 /* TapeCalcModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBA55D29E3ECBE0089B4E0 /* TapeCalcModel.swift */; };
+		60FBA56029E3ECD60089B4E0 /* CaliperCalcModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBA55F29E3ECD60089B4E0 /* CaliperCalcModel.swift */; };
+		60FBA56229E3ECF20089B4E0 /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBA56129E3ECF20089B4E0 /* InfoModel.swift */; };
+		60FBA56429E3ED2C0089B4E0 /* WeeklyWeightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBA56329E3ED2C0089B4E0 /* WeeklyWeightViewModel.swift */; };
+		60FBA56629E3ED4A0089B4E0 /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBA56529E3ED4A0089B4E0 /* QuizViewModel.swift */; };
+		60FBA56829E3ED730089B4E0 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBA56729E3ED730089B4E0 /* SettingsViewModel.swift */; };
+		60FBA56A29E3ED8E0089B4E0 /* StorageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBA56929E3ED8E0089B4E0 /* StorageViewModel.swift */; };
+		60FBA56C29E3EDA80089B4E0 /* CoreDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBA56B29E3EDA80089B4E0 /* CoreDataViewModel.swift */; };
+		60FBA56E29E3EDC40089B4E0 /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBA56D29E3EDC40089B4E0 /* CalculatorViewModel.swift */; };
+		60FBA57029E3EDEC0089B4E0 /* GraphViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBA56F29E3EDEC0089B4E0 /* GraphViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +61,6 @@
 		60FBA50329E3E5920089B4E0 /* LeanInsight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeanInsight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60FBA50629E3E5920089B4E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60FBA50829E3E5920089B4E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		60FBA50A29E3E5920089B4E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		60FBA50D29E3E5920089B4E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		60FBA51029E3E5920089B4E0 /* LeanInsight.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LeanInsight.xcdatamodel; sourceTree = "<group>"; };
 		60FBA51229E3E5920089B4E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -52,6 +71,27 @@
 		60FBA52629E3E5920089B4E0 /* LeanInsightUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeanInsightUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		60FBA52A29E3E5920089B4E0 /* LeanInsightUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeanInsightUITests.swift; sourceTree = "<group>"; };
 		60FBA52C29E3E5920089B4E0 /* LeanInsightUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeanInsightUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		60FBA54729E3E9E40089B4E0 /* WeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekViewController.swift; sourceTree = "<group>"; };
+		60FBA54929E3EA250089B4E0 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		60FBA54B29E3EB650089B4E0 /* SettingPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPopupViewController.swift; sourceTree = "<group>"; };
+		60FBA54D29E3EB8F0089B4E0 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		60FBA54F29E3EBBB0089B4E0 /* WeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightViewController.swift; sourceTree = "<group>"; };
+		60FBA55129E3EBDA0089B4E0 /* CaliperCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaliperCalculatorViewController.swift; sourceTree = "<group>"; };
+		60FBA55329E3EBFF0089B4E0 /* TapeCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapeCalculatorViewController.swift; sourceTree = "<group>"; };
+		60FBA55529E3EC340089B4E0 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		60FBA55729E3EC570089B4E0 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
+		60FBA55929E3EC7B0089B4E0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		60FBA55B29E3ECA90089B4E0 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		60FBA55D29E3ECBE0089B4E0 /* TapeCalcModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapeCalcModel.swift; sourceTree = "<group>"; };
+		60FBA55F29E3ECD60089B4E0 /* CaliperCalcModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaliperCalcModel.swift; sourceTree = "<group>"; };
+		60FBA56129E3ECF20089B4E0 /* InfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
+		60FBA56329E3ED2C0089B4E0 /* WeeklyWeightViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyWeightViewModel.swift; sourceTree = "<group>"; };
+		60FBA56529E3ED4A0089B4E0 /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
+		60FBA56729E3ED730089B4E0 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		60FBA56929E3ED8E0089B4E0 /* StorageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageViewModel.swift; sourceTree = "<group>"; };
+		60FBA56B29E3EDA80089B4E0 /* CoreDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewModel.swift; sourceTree = "<group>"; };
+		60FBA56D29E3EDC40089B4E0 /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
+		60FBA56F29E3EDEC0089B4E0 /* GraphViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,11 +145,11 @@
 			children = (
 				60FBA50629E3E5920089B4E0 /* AppDelegate.swift */,
 				60FBA50829E3E5920089B4E0 /* SceneDelegate.swift */,
-				60FBA50A29E3E5920089B4E0 /* ViewController.swift */,
-				60FBA50C29E3E5920089B4E0 /* Main.storyboard */,
-				60FBA51229E3E5920089B4E0 /* Assets.xcassets */,
-				60FBA51429E3E5920089B4E0 /* LaunchScreen.storyboard */,
+				60FBA54429E3E9980089B4E0 /* Model */,
+				60FBA54529E3E9A30089B4E0 /* View */,
+				60FBA54629E3E9A90089B4E0 /* ViewModel */,
 				60FBA51729E3E5920089B4E0 /* Info.plist */,
+				60FBA51229E3E5920089B4E0 /* Assets.xcassets */,
 				60FBA50F29E3E5920089B4E0 /* LeanInsight.xcdatamodeld */,
 			);
 			path = LeanInsight;
@@ -130,6 +170,50 @@
 				60FBA52C29E3E5920089B4E0 /* LeanInsightUITestsLaunchTests.swift */,
 			);
 			path = LeanInsightUITests;
+			sourceTree = "<group>";
+		};
+		60FBA54429E3E9980089B4E0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				60FBA55B29E3ECA90089B4E0 /* Model.swift */,
+				60FBA55D29E3ECBE0089B4E0 /* TapeCalcModel.swift */,
+				60FBA55F29E3ECD60089B4E0 /* CaliperCalcModel.swift */,
+				60FBA56129E3ECF20089B4E0 /* InfoModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		60FBA54529E3E9A30089B4E0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				60FBA50C29E3E5920089B4E0 /* Main.storyboard */,
+				60FBA54729E3E9E40089B4E0 /* WeekViewController.swift */,
+				60FBA54929E3EA250089B4E0 /* QuizViewController.swift */,
+				60FBA54B29E3EB650089B4E0 /* SettingPopupViewController.swift */,
+				60FBA54D29E3EB8F0089B4E0 /* SettingsTableViewController.swift */,
+				60FBA54F29E3EBBB0089B4E0 /* WeightViewController.swift */,
+				60FBA55129E3EBDA0089B4E0 /* CaliperCalculatorViewController.swift */,
+				60FBA55329E3EBFF0089B4E0 /* TapeCalculatorViewController.swift */,
+				60FBA55529E3EC340089B4E0 /* ResultViewController.swift */,
+				60FBA55729E3EC570089B4E0 /* GraphViewController.swift */,
+				60FBA55929E3EC7B0089B4E0 /* MainViewController.swift */,
+				60FBA51429E3E5920089B4E0 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		60FBA54629E3E9A90089B4E0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				60FBA56329E3ED2C0089B4E0 /* WeeklyWeightViewModel.swift */,
+				60FBA56529E3ED4A0089B4E0 /* QuizViewModel.swift */,
+				60FBA56729E3ED730089B4E0 /* SettingsViewModel.swift */,
+				60FBA56929E3ED8E0089B4E0 /* StorageViewModel.swift */,
+				60FBA56B29E3EDA80089B4E0 /* CoreDataViewModel.swift */,
+				60FBA56D29E3EDC40089B4E0 /* CalculatorViewModel.swift */,
+				60FBA56F29E3EDEC0089B4E0 /* GraphViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,10 +353,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60FBA50B29E3E5920089B4E0 /* ViewController.swift in Sources */,
+				60FBA55C29E3ECA90089B4E0 /* Model.swift in Sources */,
+				60FBA55029E3EBBB0089B4E0 /* WeightViewController.swift in Sources */,
+				60FBA55229E3EBDA0089B4E0 /* CaliperCalculatorViewController.swift in Sources */,
+				60FBA54829E3E9E40089B4E0 /* WeekViewController.swift in Sources */,
 				60FBA50729E3E5920089B4E0 /* AppDelegate.swift in Sources */,
+				60FBA57029E3EDEC0089B4E0 /* GraphViewModel.swift in Sources */,
+				60FBA56429E3ED2C0089B4E0 /* WeeklyWeightViewModel.swift in Sources */,
+				60FBA56A29E3ED8E0089B4E0 /* StorageViewModel.swift in Sources */,
+				60FBA54A29E3EA250089B4E0 /* QuizViewController.swift in Sources */,
+				60FBA54E29E3EB8F0089B4E0 /* SettingsTableViewController.swift in Sources */,
+				60FBA56629E3ED4A0089B4E0 /* QuizViewModel.swift in Sources */,
+				60FBA55A29E3EC7B0089B4E0 /* MainViewController.swift in Sources */,
+				60FBA55829E3EC570089B4E0 /* GraphViewController.swift in Sources */,
 				60FBA51129E3E5920089B4E0 /* LeanInsight.xcdatamodeld in Sources */,
+				60FBA56C29E3EDA80089B4E0 /* CoreDataViewModel.swift in Sources */,
 				60FBA50929E3E5920089B4E0 /* SceneDelegate.swift in Sources */,
+				60FBA56029E3ECD60089B4E0 /* CaliperCalcModel.swift in Sources */,
+				60FBA55E29E3ECBE0089B4E0 /* TapeCalcModel.swift in Sources */,
+				60FBA56829E3ED730089B4E0 /* SettingsViewModel.swift in Sources */,
+				60FBA55429E3EBFF0089B4E0 /* TapeCalculatorViewController.swift in Sources */,
+				60FBA54C29E3EB650089B4E0 /* SettingPopupViewController.swift in Sources */,
+				60FBA55629E3EC340089B4E0 /* ResultViewController.swift in Sources */,
+				60FBA56E29E3EDC40089B4E0 /* CalculatorViewModel.swift in Sources */,
+				60FBA56229E3ECF20089B4E0 /* InfoModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,8 +559,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -483,8 +588,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
