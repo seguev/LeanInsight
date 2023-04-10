@@ -78,9 +78,7 @@ struct GraphViewModel {
     mutating func updateChart(to chart:LineChartView) {
         sets = []
         entriesArray = []
-//        chart.leftAxis.axisMaximum = CoreDataModel.shared.fetchMaxWeight() * 1.6 //set graph flexible height
 
-        
         var weightEntriesArray : [ChartDataEntry] = []
         var fatEntriesArray : [ChartDataEntry] = []
 //        var bmiEntriesArray : [ChartDataEntry] = []
@@ -145,7 +143,14 @@ struct GraphViewModel {
     /// - Hides one entry
     /// - Inserts Y value at i==0. y:0 == y:1 .
     private func handleSuddenFatEntries (_ fatEntriesArray: inout [ChartDataEntry], totalEntriesCount:Int) {
-        if fatEntriesArray.count < 2 { fatEntriesArray = [] } //prevent one dot in the middle of the screen
+        
+        //prevent one dot in the middle of the screen
+        guard fatEntriesArray.count > 2 else {
+            fatEntriesArray = []
+            return
+        }
+
+        
         if fatEntriesArray.count < totalEntriesCount {
             if let tmpY = fatEntriesArray.first?.y {
                 fatEntriesArray.insert(ChartDataEntry(x: 1.0, y: tmpY), at: 0)

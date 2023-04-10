@@ -38,6 +38,7 @@
 		60FBA56C29E3EDA80089B4E0 /* CoreDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBA56B29E3EDA80089B4E0 /* CoreDataViewModel.swift */; };
 		60FBA56E29E3EDC40089B4E0 /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBA56D29E3EDC40089B4E0 /* CalculatorViewModel.swift */; };
 		60FBA57029E3EDEC0089B4E0 /* GraphViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBA56F29E3EDEC0089B4E0 /* GraphViewModel.swift */; };
+		60FBA57429E3F3400089B4E0 /* checkSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 60FBA57329E3F3400089B4E0 /* checkSound.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		60FBA56B29E3EDA80089B4E0 /* CoreDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewModel.swift; sourceTree = "<group>"; };
 		60FBA56D29E3EDC40089B4E0 /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
 		60FBA56F29E3EDEC0089B4E0 /* GraphViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewModel.swift; sourceTree = "<group>"; };
+		60FBA57329E3F3400089B4E0 /* checkSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = checkSound.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 				60FBA54529E3E9A30089B4E0 /* View */,
 				60FBA54629E3E9A90089B4E0 /* ViewModel */,
 				60FBA51729E3E5920089B4E0 /* Info.plist */,
+				60FBA57329E3F3400089B4E0 /* checkSound.wav */,
 				60FBA51229E3E5920089B4E0 /* Assets.xcassets */,
 				60FBA50F29E3E5920089B4E0 /* LeanInsight.xcdatamodeld */,
 			);
@@ -327,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60FBA51629E3E5920089B4E0 /* LaunchScreen.storyboard in Resources */,
+				60FBA57429E3F3400089B4E0 /* checkSound.wav in Resources */,
 				60FBA51329E3E5920089B4E0 /* Assets.xcassets in Resources */,
 				60FBA50E29E3E5920089B4E0 /* Main.storyboard in Resources */,
 			);
