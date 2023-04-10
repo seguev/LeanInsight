@@ -17,6 +17,7 @@
 		60FBA52129E3E5920089B4E0 /* LeanInsightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBA52029E3E5920089B4E0 /* LeanInsightTests.swift */; };
 		60FBA52B29E3E5920089B4E0 /* LeanInsightUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBA52A29E3E5920089B4E0 /* LeanInsightUITests.swift */; };
 		60FBA52D29E3E5920089B4E0 /* LeanInsightUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FBA52C29E3E5920089B4E0 /* LeanInsightUITestsLaunchTests.swift */; };
+		60FBA54329E3E7730089B4E0 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 60FBA54229E3E7730089B4E0 /* Charts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60FBA54329E3E7730089B4E0 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +148,9 @@
 			dependencies = (
 			);
 			name = LeanInsight;
+			packageProductDependencies = (
+				60FBA54229E3E7730089B4E0 /* Charts */,
+			);
 			productName = LeanInsight;
 			productReference = 60FBA50329E3E5920089B4E0 /* LeanInsight.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +223,9 @@
 				Base,
 			);
 			mainGroup = 60FBA4FA29E3E5920089B4E0;
+			packageReferences = (
+				60FBA54129E3E7730089B4E0 /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			productRefGroup = 60FBA50429E3E5920089B4E0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -606,6 +614,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		60FBA54129E3E7730089B4E0 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		60FBA54229E3E7730089B4E0 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 60FBA54129E3E7730089B4E0 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		60FBA50F29E3E5920089B4E0 /* LeanInsight.xcdatamodeld */ = {
