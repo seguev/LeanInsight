@@ -63,30 +63,33 @@ class WeekViewController: UIViewController , WeeklyWeightModelDelegate {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if !SettingsViewModel.shared.isAllDataAvailable {
-            showWarningLabel()
-        } else {
-            warningLabel?.removeFromSuperview()
-        }
+        updateWarningLabel()
     }
- 
+
     
     @objc private func viewIsTouched (_ sender:UITapGestureRecognizer) {
         guard let touchedView = sender.view else {fatalError("Cant find touched view")}
         touchedView.removeFromSuperview()
         self.performSegue(withIdentifier: "toQuiz", sender: self)
     }
-    private func showWarningLabel () {
+    
+    private func updateWarningLabel () {
+        
         warningLabel?.removeFromSuperview()
-        let label = vm.warningLabel()
-        label.textColor = .systemRed
-        label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewIsTouched(_:))))
-        view.addSubview(label)
-        NSLayoutConstraint.activate([
-            label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
-            label.widthAnchor.constraint(equalToConstant: 250),
-            label.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor, constant: 0)
-         ])
+        
+        if !SettingsViewModel.shared.isAllDataAvailable {
+            
+            let label = vm.warningLabel()
+            label.textColor = .systemRed
+            label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewIsTouched(_:))))
+            view.addSubview(label)
+            NSLayoutConstraint.activate([
+                label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
+                label.widthAnchor.constraint(equalToConstant: 250),
+                label.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor, constant: 0)
+             ])
+            warningLabel = label
+        }
     }
     
     // MARK: - observers & notifications
@@ -137,7 +140,7 @@ class WeekViewController: UIViewController , WeeklyWeightModelDelegate {
      TDEELabel, BodyFatLabel, BMILabel.
      */
     @objc private func updateCalculatedLabels (_ notification:Notification) {
-  
+
         let lastWeightAvailable = vm.fetchLastWeightAvailable()
         let mostUpdatedBodyFat = vm.fetchMostUpdatedBodyFat()
         
