@@ -23,8 +23,8 @@ struct GraphViewModel {
      chart setup
      */
     func chartSetup (_ view:UIView, chart:LineChartView) {
-        chart.rightAxis.enabled = true ;#warning("change")
-        chart.leftAxis.enabled = true ;#warning("change")
+        chart.rightAxis.enabled = true
+        chart.leftAxis.enabled = true
         chart.leftAxis.labelPosition = .insideChart
         chart.rightAxis.labelPosition = .insideChart
         chart.leftAxis.labelTextColor = .black
@@ -58,9 +58,6 @@ struct GraphViewModel {
         chart.leftAxis.axisMaximum = (CoreDataViewModel.shared.fetchMinAndMaxWeight() ?? (0.0,0.0)).max
         
         //fat axis
-        #warning("fat entry == nil == 0.0 -> graph's minimum value == 0.0 -> higher fat line")
-
-        
         chart.rightAxis.axisMinimum = CoreDataViewModel.shared.fetchMinAndMaxFat().min * 0.9 // * 0.9
         chart.rightAxis.axisMaximum = CoreDataViewModel.shared.fetchMinAndMaxFat().max * 1.1  // * 1.1
 

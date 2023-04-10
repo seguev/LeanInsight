@@ -1268,7 +1268,7 @@
         <scene sceneID="Y99-hq-ca0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CS8-TO-N2E" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="2" title="Journal" image="list.bullet.clipboard" catalog="system" id="Rbh-lp-4cy"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="Journal" id="Rbh-lp-4cy"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="42T-1K-ne3">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -1408,7 +1408,6 @@
         <image name="backGroundGraph" width="1170" height="2173"/>
         <image name="chart.xyaxis.line" catalog="system" width="128" height="102"/>
         <image name="info.circle" catalog="system" width="128" height="123"/>
-        <image name="list.bullet.clipboard" catalog="system" width="103" height="128"/>
         <image name="plus.app" catalog="system" width="128" height="114"/>
         <namedColor name="secondSet 1">
             <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>

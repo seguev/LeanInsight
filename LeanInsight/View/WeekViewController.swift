@@ -40,6 +40,8 @@ class WeekViewController: UIViewController , WeeklyWeightModelDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        barItemImageFallback()
+        
         vm.delegate = self
         
         vm.floatingViewSetup(stacksStackView)
@@ -59,7 +61,17 @@ class WeekViewController: UIViewController , WeeklyWeightModelDelegate {
         let buttons = view.subviews.filter{$0 is UIButton}
         vm.animateViewsIn(stacksStackView.subviews,buttons: buttons)
     }
-    
+        
+    private func barItemImageFallback () {
+        
+        if #available(iOS 16.0, *) {
+            
+            tabBarController?.tabBar.items![0].image = UIImage(systemName: "list.bullet.clipboard")
+          
+        } else {
+            tabBarController?.tabBar.items![0].image = UIImage(systemName: "list.bullet.rectangle.portrait")
+        }
+    }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
