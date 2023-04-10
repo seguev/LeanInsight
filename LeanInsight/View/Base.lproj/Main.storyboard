@@ -585,10 +585,10 @@
                                         </connections>
                                     </segmentedControl>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="Ici-Tl-q2I" userLabel="Labels and textfields stack">
-                                        <rect key="frame" x="0.0" y="71" width="220.33333333333334" height="174"/>
+                                        <rect key="frame" x="0.0" y="71" width="220.33333333333334" height="180"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="7Fi-gx-AG0" userLabel="Labels stack">
-                                                <rect key="frame" x="0.0" y="6.6666666666666572" width="81.333333333333329" height="161"/>
+                                                <rect key="frame" x="0.0" y="9.6666666666666572" width="81.333333333333329" height="161"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chest" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="T6x-fb-gxb">
                                                         <rect key="frame" x="0.0" y="0.0" width="81.333333333333329" height="20.333333333333332"/>
@@ -611,14 +611,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="sZ2-0N-sub" userLabel="TextFields stack">
-                                                <rect key="frame" x="120.33333333333331" y="0.0" width="100" height="174"/>
+                                                <rect key="frame" x="120.33333333333331" y="2" width="100" height="176"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" restorationIdentifier="2" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mm" textAlignment="natural" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6aS-Ng-Ae5">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="32"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="100" id="JIc-4d-LyV"/>
-                                                            <constraint firstAttribute="height" constant="32" id="NIk-kQ-FuC"/>
-                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         <connections>
@@ -627,10 +623,6 @@
                                                     </textField>
                                                     <textField opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="248" restorationIdentifier="3" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mm" textAlignment="natural" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nBQ-IX-5YR">
                                                         <rect key="frame" x="0.0" y="71" width="100" height="32"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="32" id="d0O-UD-a2E"/>
-                                                            <constraint firstAttribute="width" constant="100" id="jR6-aM-00s"/>
-                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         <connections>
@@ -638,11 +630,7 @@
                                                         </connections>
                                                     </textField>
                                                     <textField opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="248" restorationIdentifier="4" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mm" textAlignment="natural" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="oX5-XO-bii" userLabel="fourth Text Field">
-                                                        <rect key="frame" x="0.0" y="142" width="100" height="32"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="100" id="507-i0-ghT"/>
-                                                            <constraint firstAttribute="height" constant="32" id="tfZ-OX-flJ"/>
-                                                        </constraints>
+                                                        <rect key="frame" x="0.0" y="142" width="100" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         <connections>
@@ -650,6 +638,10 @@
                                                         </connections>
                                                     </textField>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="6aS-Ng-Ae5" firstAttribute="height" secondItem="nBQ-IX-5YR" secondAttribute="height" id="33b-yw-fFc"/>
+                                                    <constraint firstItem="6aS-Ng-Ae5" firstAttribute="width" secondItem="nBQ-IX-5YR" secondAttribute="width" id="vA7-vi-AG4"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <constraints>
@@ -657,7 +649,7 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3E-B6-Iu2">
-                                        <rect key="frame" x="62.666666666666671" y="285" width="95.000000000000014" height="34.333333333333314"/>
+                                        <rect key="frame" x="62.666666666666671" y="291" width="95.000000000000014" height="34.333333333333314"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Calculate" cornerStyle="large">
                                             <backgroundConfiguration key="background">
@@ -672,7 +664,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qUv-em-5Qo" userLabel="thigh button">
-                                <rect key="frame" x="34.666666666666671" y="344.33333333333331" width="49.666666666666671" height="34.333333333333314"/>
+                                <rect key="frame" x="34.666666666666671" y="347.33333333333331" width="49.666666666666671" height="34.333333333333314"/>
                                 <color key="tintColor" name="secondSetText"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
@@ -680,7 +672,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wa-xd-9tK" userLabel="abs button">
-                                <rect key="frame" x="31.666666666666668" y="274" width="49.666666666666657" height="34.333333333333314"/>
+                                <rect key="frame" x="31.666666666666668" y="277" width="49.666666666666657" height="34.333333333333314"/>
                                 <color key="tintColor" name="secondSetText"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
@@ -688,7 +680,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0j3-M3-cl9" userLabel="chest button">
-                                <rect key="frame" x="31.666666666666668" y="203.66666666666666" width="49.666666666666657" height="34.333333333333343"/>
+                                <rect key="frame" x="31.666666666666668" y="206.66666666666666" width="49.666666666666657" height="34.333333333333343"/>
                                 <color key="tintColor" name="secondSetText"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
@@ -700,6 +692,8 @@
                         <color key="backgroundColor" name="secondSetBackGround"/>
                         <constraints>
                             <constraint firstItem="dM4-Vh-09i" firstAttribute="centerX" secondItem="tdD-ly-55y" secondAttribute="centerX" id="5mZ-gd-NGH"/>
+                            <constraint firstItem="6aS-Ng-Ae5" firstAttribute="height" secondItem="tdD-ly-55y" secondAttribute="height" multiplier="0.0375587" id="B02-pj-YgR"/>
+                            <constraint firstItem="6aS-Ng-Ae5" firstAttribute="width" secondItem="tdD-ly-55y" secondAttribute="width" multiplier="0.254453" id="D1Y-Zs-VjH"/>
                             <constraint firstItem="dM4-Vh-09i" firstAttribute="top" secondItem="lbW-TR-jxr" secondAttribute="top" constant="30" id="Eaa-iq-vC4"/>
                             <constraint firstItem="U5v-3j-BKx" firstAttribute="leading" secondItem="5wa-xd-9tK" secondAttribute="trailing" constant="5" id="XwX-hB-iQv"/>
                             <constraint firstItem="qUv-em-5Qo" firstAttribute="centerY" secondItem="auj-Oy-uAV" secondAttribute="centerY" id="afR-55-fSs"/>
@@ -1400,7 +1394,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="U36-3s-Dbv"/>
-        <segue reference="vYT-s9-zpz"/>
+        <segue reference="1uY-sN-onR"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="CaliperImage" width="220.66667175292969" height="150.66667175292969"/>
